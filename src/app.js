@@ -115,13 +115,17 @@ export const main = (argv, env, cb) => {
   // Get an OAuth token for the app
   // Expecting app id and secret in env variables
   token(env.SENDER_APP_ID, env.SENDER_APP_SECRET, (err, tok) => {
-    if(err)
+    if(err) {
+      cb(err);
       return;
+    }
 
     // List the spaces the app belongs to
     spaces(tok, (err, slist) => {
-      if(err)
+      if(err) {
+        cb(err);
         return;
+      }
 
       slist
         // Filter the spaces matching the given name
@@ -146,5 +150,8 @@ export const main = (argv, env, cb) => {
 };
 
 if(require.main === module)
-  main(process.argv, process.env, () => true);
+  main(process.argv, process.env, (err) => {
+    if(err)
+      console.log('Error sending message: ', err);
+  });
 
