@@ -51,7 +51,7 @@ You're now ready to use the sample app to send a message to Watson Work!
 
 Back in the terminal window, do the following:
 ```sh
-node lib/app "Examples" "Hello _there_"
+node lib/app "Examples" "Hello *there*"
 ```
 
 The Sender app will send `Hello *there*` to the `Examples` space. You
