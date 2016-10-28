@@ -10,6 +10,7 @@ matrix:
       env: NODE_VERSION="7.0.0"
 
 before_install:
+  - uname -a
   - rm -rf ~/.nvm
   - git clone https://github.com/creationix/nvm.git ~/.nvm
   - source ~/.nvm/nvm.sh
