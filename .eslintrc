@@ -10,7 +10,6 @@ env:
 
 globals:
   __DEV__: true
-  jest: true
   sinon: true
   chai: true
   spy: true
