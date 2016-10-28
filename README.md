@@ -54,8 +54,8 @@ Back in the terminal window, do the following:
 node lib/app "Examples" "Hello *there*"
 ```
 
-The Sender app will send `Hello *there*` to the **Examples** space. You
-should now see a new "Hello *there*" message in that space.
+The Sender app will send "Hello *there*" to the **Examples** space. You
+should now see a new message in that space.
 
 Layout
 ---
