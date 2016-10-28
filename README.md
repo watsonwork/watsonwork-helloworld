@@ -19,7 +19,7 @@ To try the sample app do the following:
 
 In your Web browser, go to [Watson Work Services - Apps]
 (https://workspace.ibm.com/developer/apps) and on that page add a new app
-named `Sender`. Write down the app id and app secret for that `Sender` app.
+named **Sender**. Write down the app id and app secret for that new app.
 
 Install Node.js 6+.
 
@@ -42,10 +42,10 @@ npm run build
 
 Leave the terminal window open for now as we'll need it again soon.
 
-In your Web browser, go to [Watson Workspace](https//workspace.ibm.com),
-create a space named `Examples`.
+In your Web browser, go to [Watson Workspace](https://workspace.ibm.com),
+create a space named **Examples**.
 
-Navigate to the **Apps** tab for that space and add the `Sender` app to it.
+Navigate to the **Apps** tab for that space and add the **Sender** app to it.
 
 You're now ready to use the sample app to send a message to Watson Work!
 
@@ -54,7 +54,7 @@ Back in the terminal window, do the following:
 node lib/app "Examples" "Hello *there*"
 ```
 
-The Sender app will send `Hello *there*` to the `Examples` space. You
+The Sender app will send `Hello *there*` to the **Examples** space. You
 should now see a new "Hello *there*" message in that space.
 
 Layout
