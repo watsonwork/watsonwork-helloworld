@@ -110,7 +110,7 @@ export const main = (argv, env, cb) => {
   const name = new RegExp(argv[2]);
 
   // The text to send, can contain markdown
-  const text = argv[3] || 'Hello _there_';
+  const text = argv[3] || 'Hello *there*';
 
   // Get an OAuth token for the app
   // Expecting app id and secret in env variables

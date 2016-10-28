@@ -8,10 +8,9 @@ A Node.js example app that sends a message to [Watson Work]
 
 This program shows how to retrieve information about a Watson Work space
 and send a text message with a title and simple markdown formatting to
-the conversation in that space.
-
-It also demonstrates how to authenticate as an application and obtain the
-OAuth token needed to make Watson Work API calls.
+the conversation in that space.  It also demonstrates how to authenticate
+as an application and obtain the OAuth token needed to make Watson Work
+API calls.
 
 Try it out
 ---
@@ -46,7 +45,7 @@ Leave the terminal window open for now as we'll need it again soon.
 In your Web browser, go to [Watson Workspace](https//workspace.ibm.com),
 create a space named `Examples`.
 
-Navigate to the *Apps* tab for that space and add the `Sender` app to it.
+Navigate to the **Apps** tab for that space and add the `Sender` app to it.
 
 You're now ready to use the sample app to send a message to Watson Work!
 
@@ -55,8 +54,8 @@ Back in the terminal window, do the following:
 node lib/app "Examples" "Hello _there_"
 ```
 
-The Sender app will send `Hello _there_` to the `Examples` space. You
-should now see a new "Hello _there_" message in the `Examples` space.
+The Sender app will send `Hello *there*` to the `Examples` space. You
+should now see a new "Hello *there*" message in that space.
 
 Layout
 ---
