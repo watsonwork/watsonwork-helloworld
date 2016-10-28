@@ -104,7 +104,7 @@ const send = (spaceId, text, tok, cb) => {
 
 // Main app entry point
 // Send a message to one or more spaces
-export const main = (argv, env) => {
+export const main = (argv, env, cb) => {
 
   // Will send a message to the spaces matching the given name
   const name = new RegExp(argv[2]);
@@ -133,9 +133,12 @@ export const main = (argv, env) => {
           // Send a message
           log('Sending \'%s\' to space %s', text, space.title);
           send(space.id, text, tok, (err, res) => {
-            if(err)
+            if(err) {
+              cb(err);
               return;
+            }
             log('Sent message to space %s', space.title);
+            cb(null);
           });
         });
     });
@@ -143,5 +146,5 @@ export const main = (argv, env) => {
 };
 
 if(require.main === module)
-  main(process.argv, process.env);
+  main(process.argv, process.env, () => true);
 

@@ -1,14 +1,16 @@
 // A sample app that sends a message to Watson Work
+// Test the happy path
 
 import { expect } from 'chai';
 
-// Mock the request module
+// Rudimentary mock the request module
 let postspy;
 require('request');
 require.cache[require.resolve('request')].exports = {
   post: (uri, opt, cb) => postspy(uri, opt, cb)
 };
 
+// Load the sender app
 const sender = require('../app');
 
 describe('sender', () => {
@@ -17,7 +19,7 @@ describe('sender', () => {
     // Check async callbacks
     let checks = 0;
     const check = () => {
-      if(++checks === 3)
+      if(++checks === 4)
         done();
     };
 
@@ -115,7 +117,12 @@ describe('sender', () => {
     // Run the sender app
     sender.main(
       [null, null, 'Test', 'Hey'],
-      { SENDER_APP_ID: 'testappid', SENDER_APP_SECRET: 'testsecret' });
+      { SENDER_APP_ID: 'testappid', SENDER_APP_SECRET: 'testsecret' },
+      (err, res) => {
+        // Expect a successful run
+        expect(err).to.equal(null);
+        check();
+      });
   });
 });
 
