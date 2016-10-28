@@ -20,17 +20,17 @@ To try the sample app do the following:
 
 In your Web browser, go to [Watson Work Services - Apps]
 (https://workspace.ibm.com/developer/apps) and on that page add a new app
-named `Sender`. Write down the app id and app secret for the new `Sender` app.
+named `Sender`. Write down the app id and app secret for that `Sender` app.
 
 Install Node.js 6+.
 
 In a terminal window, do the following:
 ```sh
-# Configure the app id and secret you just got
-export SENDER_APP_ID=<your Sender app id>
-export SENDER_APP_SECRET=<Your Sender app secret>
+# Configure the app id and app secret you just got
+export SENDER_APP_ID=<the Sender app id>
+export SENDER_APP_SECRET=<the Sender app secret>
 
-# If you want to see what the program does
+# For more verbose output
 export DEBUG=watsonwork-sender
 
 # To get the code
@@ -55,9 +55,8 @@ Back in the terminal window, do the following:
 node lib/app "Examples" "Hello _there_"
 ```
 
-The Sender app will send `Hello _there_` to the `Examples` space. You should
-now see a new "Hello _there_" message in the `Examples` space in your Web
-browser.
+The Sender app will send `Hello _there_` to the `Examples` space. You
+should now see a new "Hello _there_" message in the `Examples` space.
 
 Layout
 ---
@@ -70,7 +69,7 @@ package.json  - Node.js package definition
 
 src/          - Javascript sources
 
-  app.js      - main app script, authenticates, finds space and sends a message
+  app.js      - main app script
 
   test/       - unit tests
 ```
