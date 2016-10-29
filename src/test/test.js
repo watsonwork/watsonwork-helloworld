@@ -1,9 +1,10 @@
 // A sample app that sends a message to Watson Work
+
 // Test the happy path
 
 import { expect } from 'chai';
 
-// Rudimentary mock the request module
+// Rudimentary mock of the request module
 let postspy;
 require('request');
 require.cache[require.resolve('request')].exports = {
