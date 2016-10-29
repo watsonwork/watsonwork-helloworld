@@ -81,7 +81,8 @@ describe('sender', () => {
       }
 
       // Expect a call to send a message to the test space
-      if(uri === 'https://api.watsonwork.ibm.com/teams/testspace/messages') {
+      if(uri ===
+        'https://api.watsonwork.ibm.com/v1/spaces/testspace/messages') {
         expect(opt.headers).to.deep.equal({
           Authorization: 'Bearer testaccesstoken'
         });

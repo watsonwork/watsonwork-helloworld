@@ -66,7 +66,7 @@ const token = (appId, secret, cb) => {
 // Send an app message to a space
 const send = (spaceId, text, tok, cb) => {
   request.post(
-    'https://api.watsonwork.ibm.com/teams/' + spaceId + '/messages', {
+    'https://api.watsonwork.ibm.com/v1/spaces/' + spaceId + '/messages', {
       headers: {
         Authorization: 'Bearer ' + tok
       },
