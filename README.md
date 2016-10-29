@@ -6,11 +6,11 @@ watsonwork-sender
 A Node.js example app that sends a message to [Watson Work]
 (https://workspace.ibm.com).
 
-Watson Work provides **spaces** for people to exchange using **messages** in a
-conversation. This program shows how to retrieve information about a space and
-send a text message with a title and simple markdown formatting to the
-conversation in that space.  It also demonstrates how to authenticate as an
-application and obtain the OAuth token needed to make Watson Work API calls.
+Watson Work provides **spaces** for people to exchange **messages** in a
+conversation. This program shows how to retrieve information about a space, 
+then send a message to that space. It also demonstrates how to authenticate
+as an application and obtain the OAuth token needed to make Watson Work
+API calls.
 
 Try it out
 ---
