@@ -6,11 +6,12 @@ watsonwork-sender
 A Node.js example app that sends a message to [Watson Work]
 (https://workspace.ibm.com).
 
-Watson Work provides **spaces** for people to exchange **messages** in a
-conversation. This program shows how to retrieve information about a space, 
-then send a message to that space. It also demonstrates how to authenticate
-as an application and obtain the OAuth token needed to make Watson Work
-API calls.
+Watson Work provides **spaces** for people to exchange **messages** in 
+conversations. This program shows how to retrieve information about a space, 
+then send a message to the conversation in that space.
+
+It also demonstrates how to authenticate an application and obtain the
+OAuth token needed to make Watson Work API calls.
 
 Try it out
 ---
@@ -47,15 +48,15 @@ create a space named **Examples**.
 
 Navigate to the **Apps** tab for that space and add the **Sender** app to it.
 
-You're now ready to use the sample app to send a message to a space!
+You're now ready to use the sample app to send a message!
 
 Back in the terminal window, do the following:
 ```sh
 node lib/app "Examples" "Hello *there*"
 ```
 
-The Sender app will send "Hello *there*" to the **Examples** space. You
-should now see a new message in that space.
+The Sender app will send "Hello *there*" to the conversation in the
+**Examples** space. You should now see a new message in that space.
 
 Layout
 ---
