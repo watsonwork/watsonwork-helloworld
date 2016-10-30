@@ -14,8 +14,8 @@ require.cache[require.resolve('request')].exports = {
 // Load the sender app
 const sender = require('../app');
 
-describe('sender', () => {
-  it('Sends a message to a space', (done) => {
+describe('watsonwork-sender', () => {
+  it('sends a message to a space', (done) => {
 
     // Check async callbacks
     let checks = 0;
@@ -25,7 +25,7 @@ describe('sender', () => {
     };
 
     postspy = (uri, opt, cb) => {
-      // Expect a call to get the OAuth token of an app
+      // Expect a call to get an OAuth token for the app
       if(uri === 'https://api.watsonwork.ibm.com/oauth/token') {
         expect(opt.auth).to.deep.equal({
           user: 'testappid',
@@ -117,14 +117,11 @@ describe('sender', () => {
     };
 
     // Run the sender app
-    sender.main(
-      [null, null, 'Test', 'Hey'],
-      { SENDER_APP_ID: 'testappid', SENDER_APP_SECRET: 'testsecret' },
-      (err, res) => {
-        // Expect a successful run
-        expect(err).to.equal(null);
-        check();
-      });
+    sender.main('Test', 'Hey', 'testappid', 'testsecret', (err, res) => {
+      // Expect a successful run
+      expect(err).to.equal(null);
+      check();
+    });
   });
 });
 

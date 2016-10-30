@@ -7,7 +7,7 @@ import * as request from 'request';
 import debug from 'debug';
 
 // Debug log
-const log = debug('watsonwork-sender');
+const log = debug('watsonwork-sender-app');
 
 // Return the list of spaces the app belongs to
 const spaces = (tok, cb) => {
@@ -63,7 +63,7 @@ const token = (appId, secret, cb) => {
   });
 };
 
-// Send an app message to a space
+// Send an app message to the conversation in a space
 const send = (spaceId, text, tok, cb) => {
   request.post(
     'https://api.watsonwork.ibm.com/v1/spaces/' + spaceId + '/messages', {
@@ -103,18 +103,10 @@ const send = (spaceId, text, tok, cb) => {
 };
 
 // Main app entry point
-// Send a message to one or more spaces
-export const main = (argv, env, cb) => {
-
-  // Will send a message to the spaces matching the given name
-  const name = new RegExp(argv[2]);
-
-  // The text to send, can contain markdown
-  const text = argv[3] || 'Hello *there*';
-
+// Send a message to the conversations in one or more spaces
+export const main = (name, text, appId, secret, cb) => {
   // Get an OAuth token for the app
-  // Expecting app id and secret in env variables
-  token(env.SENDER_APP_ID, env.SENDER_APP_SECRET, (err, tok) => {
+  token(appId, secret, (err, tok) => {
     if(err) {
       cb(err);
       return;
@@ -127,14 +119,15 @@ export const main = (argv, env, cb) => {
         return;
       }
 
+      // Filter the spaces matching the given name
+      const regex = new RegExp(name);
       slist
-        // Filter the spaces matching the given name
-        .filter((space) => name.test(space.title))
+        .filter((space) => regex.test(space.title))
 
         // Send to each matching space
         .map((space) => {
 
-          // Send a message
+          // Send the message
           log('Sending \'%s\' to space %s', text, space.title);
           send(space.id, text, tok, (err, res) => {
             if(err) {
@@ -150,8 +143,12 @@ export const main = (argv, env, cb) => {
 };
 
 if(require.main === module)
-  main(process.argv, process.env, (err) => {
-    if(err)
-      console.log('Error sending message: ', err);
-  });
+  // Run the app
+  main(process.argv[2], process.argv[3],
+    // Expect the app id and secret to be configured in env variables
+    process.env.SENDER_APP_ID, process.env.SENDER_APP_SECRET,
+    (err) => {
+      if(err)
+        console.log('Error sending message: ', err);
+    });
 
