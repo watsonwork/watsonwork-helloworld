@@ -31,10 +31,10 @@ export SENDER_APP_ID=<the Sender app id>
 export SENDER_APP_SECRET=<the Sender app secret>
 
 # For more verbose output
-export DEBUG=watsonwork-sender
+export DEBUG=watsonwork-*
 
 # To get the code
-git clone https://github.com/jsdelfino/watsonwork
+git clone https://github.com/jsdelfino/watsonwork-sender
 
 # To build the sample app
 cd watsonwork-sender
@@ -52,7 +52,7 @@ You're now ready to use the sample app to send a message!
 
 Back in the terminal window, do the following:
 ```sh
-node lib/app "Examples" "Hello *there*"
+npm run sender "Examples" "Hello *there*"
 ```
 
 The Sender app will send "Hello *there*" to the conversation in the
