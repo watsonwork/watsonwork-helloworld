@@ -103,7 +103,7 @@ const send = (spaceId, text, tok, cb) => {
 };
 
 // Main app entry point
-// Send a message to the conversations in one or more spaces
+// Send a message to the conversation in the space matching the given name
 export const main = (name, text, appId, secret, cb) => {
   // Get an OAuth token for the app
   token(appId, secret, (err, tok) => {
@@ -119,25 +119,23 @@ export const main = (name, text, appId, secret, cb) => {
         return;
       }
 
-      // Filter the spaces matching the given name
-      const regex = new RegExp(name);
-      slist
-        .filter((space) => regex.test(space.title))
+      // Find a space matching the given name
+      const space = slist.filter((s) => s.title === name)[0];
+      if(!space) {
+        cb(new Error('Space not found'));
+        return;
+      }
 
-        // Send to each matching space
-        .map((space) => {
-
-          // Send the message
-          log('Sending \'%s\' to space %s', text, space.title);
-          send(space.id, text, tok, (err, res) => {
-            if(err) {
-              cb(err);
-              return;
-            }
-            log('Sent message to space %s', space.title);
-            cb(null);
-          });
-        });
+      // Send the message
+      log('Sending \'%s\' to space %s', text, space.title);
+      send(space.id, text, tok, (err, res) => {
+        if(err) {
+          cb(err);
+          return;
+        }
+        log('Sent message to space %s', space.title);
+        cb(null);
+      });
     });
   });
 };
@@ -149,6 +147,6 @@ if(require.main === module)
     process.env.SENDER_APP_ID, process.env.SENDER_APP_SECRET,
     (err) => {
       if(err)
-        console.log('Error sending message: ', err);
+        console.log('Error sending message:', err);
     });
 

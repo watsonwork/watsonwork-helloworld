@@ -117,7 +117,7 @@ describe('watsonwork-sender', () => {
     };
 
     // Run the sender app
-    sender.main('Test', 'Hey', 'testappid', 'testsecret', (err, res) => {
+    sender.main('Test Space', 'Hey', 'testappid', 'testsecret', (err, res) => {
       // Expect a successful run
       expect(err).to.equal(null);
       check();
