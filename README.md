@@ -31,7 +31,7 @@ In a terminal window, do the following:
 export DEBUG=watsonwork-*
 
 # Get the code
-git clone https://github.com/jsdelfino/watsonwork-sender
+git clone https://github.com/watsonwork/watsonwork-sender
 
 # Build the app
 cd watsonwork-sender

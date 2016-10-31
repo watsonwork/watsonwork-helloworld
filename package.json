@@ -3,13 +3,13 @@
   "description": "A sample app that sends a message to Watson Work",
   "license": "Apache-2.0",
   "version": "0.0.1",
-  "homepage": "https://github.com/jsdelfino/watsonwork-sender",
+  "homepage": "https://github.com/watsonwork/watsonwork-sender",
   "bugs": {
-    "url": "https://github.com/jsdelfino/watsonwork-sender"
+    "url": "https://github.com/watsonwork/watsonwork-sender"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsdelfino/watsonwork-sender.git"
+    "url": "https://github.com/watsonwork/watsonwork-sender.git"
   },
   "keywords": [
     "watson",
