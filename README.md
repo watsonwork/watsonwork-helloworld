@@ -1,6 +1,6 @@
 # watsonwork-sender
 
-[![Build Status](https://travis-ci.org/jsdelfino/watsonwork-sender.svg)](https://travis-ci.org/jsdelfino/watsonwork-sender)
+[![Build Status](https://travis-ci.org/watsonwork/watsonwork-sender.svg)](https://travis-ci.org/watsonwork/watsonwork-sender)
 
 A Node.js example app that sends a message to [Watson Work]
 (https://workspace.ibm.com).
