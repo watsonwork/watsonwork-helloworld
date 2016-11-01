@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/watsonwork/watsonwork-sender.svg)](https://travis-ci.org/watsonwork/watsonwork-sender)
 
-A Node.js example app that sends a message to [Watson Work]
+A Node.js sample app that sends a message to a space in [IBM Watson Workspace]
 (https://workspace.ibm.com).
 
 The Watson Work platform provides **spaces** for people to exchange
@@ -15,13 +15,13 @@ obtain the OAuth token needed to make Watson Work API calls.
 
 To try the sample app do the following:
 
-### Register the app
+### Registering the app
 
 In your Web browser, go to [Watson Work Services - Apps]
 (https://workspace.ibm.com/developer/apps), add a new app named
 **Sender** and write down its app id and app secret.
 
-### Build the app
+### Building the app
 
 Install Node.js 6+.
 
@@ -38,7 +38,7 @@ cd watsonwork-sender
 npm run build
 ```
 
-### Add the app to a space
+### Adding the app to a space
 
 Leave the terminal window open as you'll need it again soon.
 
@@ -46,7 +46,7 @@ In your Web browser, go to [Watson Workspace](https://workspace.ibm.com),
 create a space named **Examples**, then open the **Apps** tab for that space
 and add the **Sender** app to it.
 
-### Send a message using the app
+### Sending a message using the app
 
 You're now ready to use the sample app to send a message!
 
@@ -62,9 +62,9 @@ npm run sender "Examples" "Hello *there*"
 The Sender app will send "Hello *there*" to the conversation in the
 **Examples** space. You should now see a new message in that space.
 
-## Layout
+## Project layout
 
-The example source tree is organized as follows:
+The sample project source tree is organized as follows:
 
 ```sh
 README.md     - this README

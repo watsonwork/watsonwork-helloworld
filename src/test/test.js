@@ -1,4 +1,4 @@
-// A sample app that sends a message to Watson Work
+// A sample app that sends a message to a space in IBM Watson Workspace
 
 // Test the happy path
 

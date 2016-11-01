@@ -1,6 +1,6 @@
 {
   "name": "watsonwork-sender",
-  "description": "A sample app that sends a message to Watson Work",
+  "description": "A sample app that sends a message to a space in IBM Watson Workspace",
   "license": "Apache-2.0",
   "version": "0.0.1",
   "homepage": "https://github.com/watsonwork/watsonwork-sender",

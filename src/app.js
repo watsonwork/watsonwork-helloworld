@@ -1,7 +1,7 @@
-// A sample app that sends a message to Watson Work
+// A sample app that sends a message to a space in IBM Watson Workspace
 
 // Usage:
-// node lib/app "space name" "message text"
+// npm run sender "space name" "message text"
 
 import * as request from 'request';
 import debug from 'debug';
