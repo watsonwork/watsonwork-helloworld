@@ -1,9 +1,9 @@
-# watsonwork-sender
+# watsonwork-helloworld
 
-[![Build Status](https://travis-ci.org/watsonwork/watsonwork-sender.svg)](https://travis-ci.org/watsonwork/watsonwork-sender)
+[![Build Status](https://travis-ci.org/watsonwork/watsonwork-helloworld.svg)](https://travis-ci.org/watsonwork/watsonwork-helloworld)
 
-A Node.js sample app that sends a message to a space in [IBM Watson Workspace]
-(https://workspace.ibm.com).
+A Node.js sample app that sends a *Hello World* message to a space in
+[IBM Watson Workspace] (https://workspace.ibm.com).
 
 The Watson Work platform provides **spaces** for people to exchange
 **messages** in conversations. This sample app shows how to retrieve
@@ -19,7 +19,7 @@ To try the sample app do the following:
 
 In your Web browser, go to [Watson Work Services - Apps]
 (https://workspace.ibm.com/developer/apps), add a new app named
-**Sender** and write down its app id and app secret.
+**Hello World** and write down its app id and app secret.
 
 ### Building the app
 
@@ -31,10 +31,10 @@ In a terminal window, do the following:
 export DEBUG=watsonwork-*
 
 # Get the code
-git clone https://github.com/watsonwork/watsonwork-sender
+git clone https://github.com/watsonwork/watsonwork-helloworld
 
 # Build the app
-cd watsonwork-sender
+cd watsonwork-helloworld
 npm run build
 ```
 
@@ -44,7 +44,7 @@ Leave the terminal window open as you'll need it again soon.
 
 In your Web browser, go to [Watson Workspace](https://workspace.ibm.com),
 create a space named **Examples**, then open the **Apps** tab for that space
-and add the **Sender** app to it.
+and add the **Hello World** app to it.
 
 ### Sending a message using the app
 
@@ -53,14 +53,15 @@ You're now ready to use the sample app to send a message!
 Back in the terminal window, do the following:
 ```sh
 # Configure the app id and app secret
-export SENDER_APP_ID=<the Sender app id>
-export SENDER_APP_SECRET=<the Sender app secret>
+export HELLOWORLD_APP_ID=<the Hello World app id>
+export HELLOWORLD_APP_SECRET=<the Hello World app secret>
 
-npm run sender "Examples" "Hello *there*"
+npm run helloworld "Examples"
 ```
 
-The Sender app will send "Hello *there*" to the conversation in the
-**Examples** space. You should now see a new message in that space.
+The Hello World app will send "Hello World! Welcome to **Watson Work**!" to
+the conversation in the **Examples** space. You should now see a new message
+in that space.
 
 ## Project layout
 

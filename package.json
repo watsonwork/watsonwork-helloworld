@@ -1,20 +1,20 @@
 {
-  "name": "watsonwork-sender",
-  "description": "A sample app that sends a message to a space in IBM Watson Workspace",
+  "name": "watsonwork-helloworld",
+  "description": "A sample app that sends a hello world message to a space in IBM Watson Workspace",
   "license": "Apache-2.0",
   "version": "0.0.1",
-  "homepage": "https://github.com/watsonwork/watsonwork-sender",
+  "homepage": "https://github.com/watsonwork/watsonwork-helloworld",
   "bugs": {
-    "url": "https://github.com/watsonwork/watsonwork-sender"
+    "url": "https://github.com/watsonwork/watsonwork-helloworld"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/watsonwork/watsonwork-sender.git"
+    "url": "https://github.com/watsonwork/watsonwork-helloworld.git"
   },
   "keywords": [
     "watson",
     "work",
-    "send"
+    "hello"
   ],
   "files": [
     ".npmrc",
@@ -23,7 +23,7 @@
   ],
   "main": "lib/app.js",
   "scripts": {
-    "sender": "node lib/app.js",
+    "helloworld": "node lib/app.js",
     "babel": "babel src --out-dir lib",
     "test": "mocha lib/test",
     "lint": "eslint src",

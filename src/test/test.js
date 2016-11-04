@@ -1,4 +1,5 @@
-// A sample app that sends a message to a space in IBM Watson Workspace
+// A sample app that sends a 'hello world' message to a space in IBM
+// Watson Workspace
 
 // Test the happy path
 
@@ -11,11 +12,11 @@ require.cache[require.resolve('request')].exports = {
   post: (uri, opt, cb) => postspy(uri, opt, cb)
 };
 
-// Load the sender app
-const sender = require('../app');
+// Load the HelloWorld app
+const helloworld = require('../app');
 
-describe('watsonwork-sender', () => {
-  it('sends a message to a space', (done) => {
+describe('watsonwork-helloworld', () => {
+  it('sends a hello world message to a space', (done) => {
 
     // Check async callbacks
     let checks = 0;
@@ -96,13 +97,13 @@ describe('watsonwork-sender', () => {
             version: 1.0,
 
             color: '#6CB7FB',
-            title: 'Sample message',
+            title: 'Sample Message',
             text: 'Hey',
 
             actor: {
-              name: 'Sample app',
+              name: 'from sample helloworld app',
               avatar: 'https://avatars1.githubusercontent.com/u/22985179',
-              url: 'https://github.com/watsonwork'
+              url: 'https://github.com/watsonwork-helloworld'
             }
           }]
         });
@@ -116,12 +117,13 @@ describe('watsonwork-sender', () => {
       }
     };
 
-    // Run the sender app
-    sender.main('Test Space', 'Hey', 'testappid', 'testsecret', (err, res) => {
-      // Expect a successful run
-      expect(err).to.equal(null);
-      check();
-    });
+    // Run the HelloWorld app
+    helloworld.main('Test Space', 'Hey', 'testappid', 'testsecret',
+      (err, res) => {
+        // Expect a successful run
+        expect(err).to.equal(null);
+        check();
+      });
   });
 });
 

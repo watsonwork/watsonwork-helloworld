@@ -1,13 +1,14 @@
-// A sample app that sends a message to a space in IBM Watson Workspace
+// A sample app that sends a 'hello world' message to a space in IBM
+// Watson Workspace
 
 // Usage:
-// npm run sender "space name" "message text"
+// npm run helloworld "space name" ["message text"]
 
 import * as request from 'request';
 import debug from 'debug';
 
 // Debug log
-const log = debug('watsonwork-sender-app');
+const log = debug('watsonwork-helloworld-app');
 
 // Return the list of spaces the app belongs to
 const spaces = (tok, cb) => {
@@ -81,13 +82,13 @@ const send = (spaceId, text, tok, cb) => {
           version: 1.0,
 
           color: '#6CB7FB',
-          title: 'Sample message',
+          title: 'Sample Message',
           text: text,
 
           actor: {
-            name: 'Sample app',
+            name: 'from sample helloworld app',
             avatar: 'https://avatars1.githubusercontent.com/u/22985179',
-            url: 'https://github.com/watsonwork'
+            url: 'https://github.com/watsonwork-helloworld'
           }
         }]
       }
@@ -128,14 +129,16 @@ export const main = (name, text, appId, secret, cb) => {
 
       // Send the message
       log('Sending \'%s\' to space %s', text, space.title);
-      send(space.id, text, tok, (err, res) => {
-        if(err) {
-          cb(err);
-          return;
-        }
-        log('Sent message to space %s', space.title);
-        cb(null);
-      });
+      send(space.id,
+        text || 'Hello World! Welcome to **Watson Work**!',
+        tok, (err, res) => {
+          if(err) {
+            cb(err);
+            return;
+          }
+          log('Sent message to space %s', space.title);
+          cb(null);
+        });
     });
   });
 };
@@ -144,7 +147,7 @@ if(require.main === module)
   // Run the app
   main(process.argv[2], process.argv[3],
     // Expect the app id and secret to be configured in env variables
-    process.env.SENDER_APP_ID, process.env.SENDER_APP_SECRET,
+    process.env.HELLOWORLD_APP_ID, process.env.HELLOWORLD_APP_SECRET,
     (err) => {
       if(err)
         console.log('Error sending message:', err);
