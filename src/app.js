@@ -86,7 +86,7 @@ const send = (spaceId, text, tok, cb) => {
           text: text,
 
           actor: {
-            name: 'from sample helloworld app'
+            name: 'Sample helloworld app'
           }
         }]
       }

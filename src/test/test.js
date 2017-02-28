@@ -101,7 +101,7 @@ describe('watsonwork-helloworld', () => {
             text: 'Hey',
 
             actor: {
-              name: 'from sample helloworld app'
+              name: 'Sample helloworld app'
             }
           }]
         });
