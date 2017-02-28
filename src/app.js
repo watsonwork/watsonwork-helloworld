@@ -86,9 +86,7 @@ const send = (spaceId, text, tok, cb) => {
           text: text,
 
           actor: {
-            name: 'from sample helloworld app',
-            avatar: 'https://avatars1.githubusercontent.com/u/22985179',
-            url: 'https://github.com/watsonwork-helloworld'
+            name: 'from sample helloworld app'
           }
         }]
       }
