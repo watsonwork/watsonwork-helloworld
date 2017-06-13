@@ -18,7 +18,7 @@ To try the sample app do the following:
 ### Registering the app
 
 In your Web browser, go to [Watson Work Services - Apps]
-(https://workspace.ibm.com/developer/apps), add a new app named
+(https://developer.watsonwork.ibm.com/apps), add a new app named
 **Hello World** and write down its app id and app secret.
 
 ### Building the app
@@ -81,11 +81,11 @@ src/          - Javascript sources
 ## What API does the app use?
 
 The app uses the [Watson Work OAuth API]
-(https://workspace.ibm.com/developer/docs) to authenticate and get an
+(https://developer.watsonwork.ibm.com/docs) to authenticate and get an
 OAuth token.  It then uses the [Watson Work GraphQL API]
-(https://workspace.ibm.com/developer/docs) to retrieve a list of spaces.
+(https://developer.watsonwork.ibm.com/docs) to retrieve a list of spaces.
 Finally, it uses the [Watson Work Spaces API]
-(https://workspace.ibm.com/developer/docs) to send a message to the
+(https://developer.watsonwork.ibm.com/docs) to send a message to the
 conversation in the selected space.
 
 ## How can I contribute?
