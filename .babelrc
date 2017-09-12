@@ -1,6 +1,19 @@
-{
-    "compact": false,
-    "presets": ["es2015"],
-    "auxiliaryCommentBefore": "istanbul ignore next",
-    "sourceMaps": "inline"
-}
+{  
+    "presets": [   
+    ["env", {  
+    "targets": {   
+    "node": "0.12"   
+    }  
+    }]   
+    ],   
+    "compact": false,  
+    "sourceMaps": "inline",  
+    "plugins": [   
+    "transform-async-to-bluebird",   
+    "transform-promise-to-bluebird",   
+    ["transform-runtime", {  
+    "polyfill": false,   
+    "regenerator": true  
+    }]   
+    ]  
+}    

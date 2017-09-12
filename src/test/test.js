@@ -16,14 +16,7 @@ require.cache[require.resolve('request')].exports = {
 const helloworld = require('../app');
 
 describe('watsonwork-helloworld', () => {
-  it('sends a hello world message to a space', (done) => {
-
-    // Check async callbacks
-    let checks = 0;
-    const check = () => {
-      if(++checks === 4)
-        done();
-    };
+  it('sends a hello world message to a space', async () => {
 
     postspy = (uri, opt, cb) => {
       // Expect a call to get an OAuth token for the app
@@ -44,7 +37,7 @@ describe('watsonwork-helloworld', () => {
             access_token: 'testaccesstoken'
           }
         }));
-        check();
+        // check();
         return;
       }
 
@@ -78,7 +71,6 @@ describe('watsonwork-helloworld', () => {
             }
           })
         }));
-        check();
         return;
       }
 
@@ -111,17 +103,17 @@ describe('watsonwork-helloworld', () => {
           body: {
           }
         }));
-        check();
       }
     };
 
-    // Run the HelloWorld app
-    helloworld.main('Test Space', 'Hey', 'testappid', 'testsecret',
-      (err, res) => {
-        // Expect a successful run
-        expect(err).to.equal(null);
-        check();
-      });
+    try {  
+      // Run the HelloWorld app
+      await helloworld.main('Test Space', 'Hey', 'testappid', 'testsecret');
+    }
+    catch(err) {
+      throw err;
+    }  
+
   });
 });
 

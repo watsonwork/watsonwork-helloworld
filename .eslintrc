@@ -15,10 +15,11 @@ globals:
   spy: true
   stub: true
 
-parserOptions:
-  sourceType: "module"
+parserOptions:  
+  sourceType: "module" 
+  ecmaVersion: 8
 
-rules:
+  rules:
   # ERRORS
   space-before-blocks: 2
   indent: [2, 2, { "SwitchCase": 1 }]
